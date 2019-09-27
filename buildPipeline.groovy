@@ -2,7 +2,7 @@
 
 pipeline {
 
-  agent master
+  agent any
 
   stages {
       stage ('build docker image') {
@@ -18,7 +18,7 @@ pipeline {
       }
 
       stage ('get the archived binaries') {
-          strps{
+          steps{
             sh './gatherOutput.sh'
           }
       }
